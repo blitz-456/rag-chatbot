@@ -52,7 +52,6 @@ def get_processed_files(client, collection_name):
                 scroll_filter=None,
                 offset=offset
             )
-            print(f"Fetched {len(points)} points from Qdrant. \n{type(points)}\n{points}")
             for p in points:
                 if "file_hash" in p.payload:
                     processed_files.add(p.payload["file_hash"])
